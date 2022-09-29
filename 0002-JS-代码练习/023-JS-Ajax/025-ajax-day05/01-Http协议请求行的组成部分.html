@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <button class="get_btn">发送GET请求</button>
+    <button class="post_btn">发送POST请求</button>
+    <script>
+        // Http请求行是由【请求方式 请求URL 协议版本】组成，可以在NetWork里面的request header->view source查看
+        $('.get_btn').on('click', function () {
+            $.ajax({
+                method: 'GET',
+                url: 'http://localhost:9000/getBook/1',
+                success: function (res) {
+                    console.log(res);
+                }
+            })
+        })
+
+        $('.post_btn').on('click', function () {
+            let  data = {
+                name: "斗罗大陆",
+                author: "唐家三少",
+                publisher: "上海腾讯有限公司"
+            }
+            $.ajax({
+                method: 'POST',
+                url: 'http://localhost:9000/addBook',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (res) {
+                    console.log(res);
+                }
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

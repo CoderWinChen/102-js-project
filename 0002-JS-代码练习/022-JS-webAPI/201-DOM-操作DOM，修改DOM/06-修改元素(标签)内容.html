@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        我是文本
+    </div>
+
+    <script>
+        // 获取DOM元素(div标签)
+        let div = document.querySelector('div');
+        // 修改div标签的文本内容，但是无法识别HTML标签，对象.属性 = 值
+        div.innerText = '我是修改后的文本';
+        div.innerText = '<b>有点意思~</b>'
+
+        // 可以解析HTML标签
+        div.innerHTML = '<b>有点意思~</b>'
+    </script>
+</body>
+
+</html>

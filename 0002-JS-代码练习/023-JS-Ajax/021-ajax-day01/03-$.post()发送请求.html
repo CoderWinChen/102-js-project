@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+</head>
+<body>
+    <script>
+        $(function(){
+            $.post(
+                'http://localhost:8080/addBook',
+                {
+                    "name": "肖克申的救赎",
+                    "img": "./images/6.jpg",
+                    "author": "张三",
+                    "publisher": "人民日报出版社",
+                    "publishDate":"",
+                    "price": 100.00,
+                    "isbn": "10086"
+                },
+                (res)=>{
+                    console.log(res);
+                }
+            )
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 0 auto;
+             border-collapse: collapse;
+             width: 500px;
+             text-align: center;
+        }
+        table th,
+        table td {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- 需求：用户输入商品价格和商品数量，以及收货地址，可以自动打印订单信息 -->
+    <script>
+        let productName = prompt('请输入商品名称');
+        let price = prompt('请输入商品价格');
+        let number = prompt('请输入商品数量');
+        let address = prompt('请输入收货地址');
+        document.write(`
+        <table border="1">
+        <caption><h3>订单付款确认页面</h3></caption>
+        <tr>
+            <th>商品名称</th>
+            <th>商品价格</th>
+            <th>商品数量</th>
+            <th>总价</th>
+            <th>收货地址</th>
+        </tr>
+        <tr>
+            <td>${productName}</td>
+            <td>${price}元      </td>
+            <td>${number}</td>
+            <td>${price*3}元</td>
+            <td>${address}</td>
+        </tr>
+    </table>      
+        `)
+    </script>
+</body>
+</html>

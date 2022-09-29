@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //
+        console.log(undefined + 10); //NaN
+        console.log(undefined + true); //NaN
+        console.log(undefined + NaN); //NaN
+        console.log(undefined + 'pink'); //undefinedpink 除了最后一种，其他的与undefined相加都是NaN（FALSE）
+
+        function fn(x, y) {
+            // 如果没有变量没有赋值，就是undefined，结果会是Nan，也就是false
+            //如果调用的时候，没有传递实参，则默认为0
+            x = x || 0;
+            y = y || 0;
+            document.write(x + y) //0
+        }
+
+        /* 在Java中的必须形参和实参对应，js中，无参的可以调用有参的方法，但是要特殊处理 */
+        fn()
+    </script>
+</body>
+
+</html>

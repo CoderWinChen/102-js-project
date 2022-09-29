@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getMaxAndMin(x, y) {
+            x = x || 0;
+            y = y || 0;
+            return [x > y ? x : y, x < y ? x : y]
+        }
+
+        function getArrMaxAndMin(array) {
+            let maxNum = minNum =  array[0];
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] > maxNum) {
+                    maxNum = array[i];
+                }
+                // 不能用else，因为对同一个变量进行比较
+                if (array[i] < minNum) {
+                    minNum = array[i];
+                }
+                
+            }
+            return [maxNum, minNum];
+        }
+
+          function getArrMaxAndMinSanMu(array) {
+                let maxNum = minNum = array[0];
+                for (let i = 0; i < array.length; i++) {
+                    maxNum = array[i] > maxNum ? array[i] : maxNum;
+                    minNum = array[i] < minNum ? array[i] : minNum;
+    
+                }
+                return [maxNum, minNum];
+            }
+
+        let results = getMaxAndMin(10, 20);
+        document.write(results)
+        document.write(`<br>最大值是:${results[0]},最小值是:${results[1]}<br>`)
+
+        let arrResult = getArrMaxAndMin([10, 20, 50, 6, 7, 8, 98, 36, 45]);
+        document.write(`数组中最大值是:${arrResult[0]}`, `数组中最小值是:${arrResult[1]}<br>`)
+        arrResult = getArrMaxAndMinSanMu([99,10,58,9,6,100,23,1]);
+        document.write(`数组中最大值是:${arrResult[0]}`, `数组中最小值是:${arrResult[1]}`)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="" alt="">
+    <!-- 需求：刷新页面随机切换图片 -->
+    <script>
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        let imgs = [
+            {
+                title: '刘德华1',
+                src: './images/1.webp'
+            },
+            {
+                title: '刘德华2',
+                src: './images/2.webp'
+            },
+            {
+                title: '刘德华3',
+                src: './images/3.webp'
+            },
+            {
+                title: '刘德华4',
+                src: './images/4.webp'
+            },
+            {
+                title: '刘德华5',
+                src: './images/5.webp'
+            },
+            {
+                title: '刘德华6',
+                src: './images/6.webp'
+            }
+        ]
+
+        let img = document.querySelector('img');
+        let random = getRandom(0, imgs.length - 1);
+        img.src = imgs[random].src;
+        img.title = imgs[random].title;
+
+        imgs.splice(random, 1);
+
+    </script>
+</body>
+
+</html>

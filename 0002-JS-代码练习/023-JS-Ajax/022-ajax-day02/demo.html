@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/myTemp.js"></script>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+
+    <script type="text/html" id="aa">
+        <div>{{hello      }}</div>
+        <div>{{msg}}</div>
+    </script>
+
+    <script>
+        let data = {
+            hello: '你好',
+            msg: '不好'
+        }
+        let htmlStr = template('aa',data)
+    </script>
+</body>
+</html>

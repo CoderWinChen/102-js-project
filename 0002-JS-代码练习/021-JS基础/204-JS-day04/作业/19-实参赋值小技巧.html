@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 这句话的意思是如果有实参，则会把实参传递，如果没有实参，则赋值x = 0,y = 0
+        function fn(x = 0,y = 0){
+            console.log(x+y);
+        }
+        fn(); //0
+        fn(3,4); //7
+    </script>
+</body>
+</html>

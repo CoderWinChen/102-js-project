@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container"></div>
+    <script type="text/html" id="tpl">
+        <div>姓名：{{name}}</div>
+        <div>年龄：{{age}}</div>
+        <div>性别：{{gender}}</div>
+        <div>住址：{{address}}</div>
+    </script>
+
+    <script src="./js/mytemplate.js"></script>
+
+    <script>
+        // 定义数据
+        let data = {
+            name: '张三',
+            age: 23,
+            gender: '男',
+            address: '深圳'
+        }
+        let htmlStr = document.querySelector('.container');
+        // 调用模板引擎
+        let template = mytemplate('tpl', data);
+        // 渲染到页面
+        htmlStr.innerHTML = template;
+    </script>
+</body>
+
+</html>

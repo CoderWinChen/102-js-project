@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 基本数据类型是按值存储,值传递
+        let num1 = 10;
+        let num2 = num1;
+        num1 = 20;
+        console.log(num2); //10
+
+        // 对象是引用数据类型,存储在堆内存中
+        let obj1 = {
+            age: 23
+        }
+        let obj2 = obj1; //赋值的是obj1的地址,所以两个变量指向的是同一块内存
+        obj1.age = 30;
+        console.log(obj2); //30
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是大猫</li>
+    </ul>
+    <script>
+        let ul = document.querySelector('ul');
+        // 创建
+        let li = document.createElement('li');
+        let newLi = document.createElement('li');
+
+        li.innerHTML = '我是新加的li';
+        newLi.innerHTML = '我是新加的第二个元素'
+        // 追加，往父元素后面追加li
+        ul.appendChild(li)
+
+        // 往前面追加：应用场景，微博留言，每次都是最新，最新在最前面，每次都是追加在第一个元素
+        ul.insertBefore(newLi,ul.children[0]);
+    </script>
+</body>
+</html>

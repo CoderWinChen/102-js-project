@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 数组去0案例:需求：将数组 [2, 0, 6, 1, 77, 0, 52, 0, 25, 7] 中的 0 去掉后，形成一个不包含 0 的新数组
+        let arrays = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        let newArrays = [];
+        for (let i = 0; i < arrays.length; i++) {
+            if (arrays[i] !== 0) {
+                newArrays.push(arrays[i]);
+            }
+        }
+
+        console.log(newArrays);
+    </script>
+</body>
+
+</html>

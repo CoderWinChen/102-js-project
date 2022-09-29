@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按钮1</button>
+    <button class="pink">按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+
+    <script>
+        //tab栏切换    
+        let btns = document.querySelectorAll('button');
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click', function () {
+                //将带有pink类的按钮，删掉
+                document.querySelector('.pink').classList.remove('pink');
+                // 将当前选中的按钮添加类名
+                this.classList.add('pink')
+            });
+
+        }
+
+    </script>
+</body>
+
+</html>

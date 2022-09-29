@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- method为get，表单数据会显示在地址栏上，post不会显示在地址栏上，但是会显示在network里面的form-data上 -->
+    <!-- target表示提交的URL打开方式 -->
+    <form action="/login" method="post" target="_blank">
+        姓名：<input type="text" name="username">
+        <br><br>
+        密码：<input type="password" name="password">
+        <br><br>
+        <button type="submit">登录</button>
+    </form>
+</body>
+</html>

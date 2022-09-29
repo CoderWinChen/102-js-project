@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">不点击5s后自动跳转到百度</a>
+    <!-- 需求：用户点击可以跳转，如果不点击，则5秒之后自动跳转，要求里面有秒数倒计时 -->
+    <script>
+        let title = document.querySelector('a')
+        let url = "http://www.baidu.com"
+        let second = 5
+        // 不点击则自动跳转到百度
+        let timer = setInterval(()=>{
+            title.innerHTML = `不点击<span>${--second}</span>s后自动跳转到百度`
+            if (second == 0){
+            location.href = url    
+            }
+        },1000)
+
+    </script>
+</body>
+</html>

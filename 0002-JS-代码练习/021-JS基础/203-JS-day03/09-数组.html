@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 需求：求数组[2，6，1，7，4]里面所有元素的和以及平均值
+        let nums = [2, 6, 1, 7, 4];
+        let sum = 0;
+        let avg = 0;
+
+        for (let i = 0; i < nums.length; i++) {
+            sum += nums[i];
+        }
+        document.write(`数组元素之和为:${sum}`, `数组的平均值为:${sum / (nums.length)}`)
+    </script>
+</body>
+
+</html>

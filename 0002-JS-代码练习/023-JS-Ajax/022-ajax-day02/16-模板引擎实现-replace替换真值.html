@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let data = {
+            name: '张三',
+            age: 23,
+            gender: '男',
+            hobby: ['敲代码', '跑步']
+        }
+        let str = '<div>我是{{name}}，今年{{ age }}岁了,性别:{{gender}}，爱好:{{  hobby  }}</div>';
+        let reg = /{{\s*([a-zA-Z]+)\s*}}/
+        let result = null;
+        while (result = reg.exec(str)) {
+            //判断条件为是否查找得到，查找得到重新赋值，
+            str = str.replace(result[0], data[result[1]]) //替换为真实数据，result[1]拿到的是key，通过data[key]得到value
+        }
+
+        console.log(str);
+
+    </script>
+</body>
+
+</html>

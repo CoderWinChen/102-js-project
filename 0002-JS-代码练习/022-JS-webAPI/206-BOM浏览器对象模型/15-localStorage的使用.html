@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 存储在浏览器的Application中的localStorage里面
+        localStorage.setItem('name', '张三'); //存储数据
+        console.log(localStorage.getItem('name')); //取出数据
+
+        localStorage.removeItem('name') //删除数据
+
+
+        // 存储复杂数据类型必须转换为JSON格式,JSON格式就是键值对都是字符串
+        let obj = {
+            name: '张三',
+            age: 23,
+            gender: '男'
+        }
+        // 只能存字符串
+        localStorage.setItem('user',JSON.stringify(obj))
+
+        // 取到的也是字符串,需要将JSON字符串转换为对象
+        console.log(JSON.parse(localStorage.getItem('user')));
+        console.log(JSON.parse(localStorage.getItem('user')).name);
+
+    </script>
+</body>
+
+</html>

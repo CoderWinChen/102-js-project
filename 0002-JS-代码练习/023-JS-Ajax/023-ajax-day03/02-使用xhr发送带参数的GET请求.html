@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="1">按钮1</button>
+    <button id="2">按钮2</button>
+    <button id="3">按钮3</button>
+    <script>
+        // 使用xhr发送带有参数的GET请求
+        let btns = document.querySelectorAll('button');
+        for (let i = 0; i < btns.length; i++) {
+            btns[i].addEventListener('click',function(){
+                  let xhr = new XMLHttpRequest();
+                xhr.open('GET', 'http://localhost:9000/getBookById?id='+this.id)
+                xhr.send();
+                xhr.onreadystatechange = function(){
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log(xhr.responseText);
+                    }
+                }
+            })
+            
+        }
+      
+    </script>
+</body>
+
+</html>

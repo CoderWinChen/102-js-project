@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <form action="#">
+        姓名：<input type="text" name="username" id="">
+        <br><br>
+        密码：<input type="password" name="password" id="">
+        <br><br>
+        电话：<input type="text" name="phone" id="">
+        <br><br>
+        性别：<input type="radio" name="gender" id="" value="boy">男
+              <input type="radio" name="gender" id="" value="girl">女
+        <br><br>
+        
+        <button type="submit">登录</button>
+    </form>
+    <script>
+        // 平时用DOM一个个取获取表单元素的值，太麻烦，可以通过jq的serialize()方法一次性获取表单的所有数据
+        $('form').submit(function (e) {
+            e.preventDefault()
+            console.log($(this).serialize());
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .countdown {
+      width: 240px;
+      height: 305px;
+      text-align: center;
+      line-height: 1;
+      color: #fff;
+      background-color: brown;
+      /* background-size: 240px; */
+      /* float: left; */
+      overflow: hidden;
+    }
+
+    .countdown .next {
+      font-size: 16px;
+      margin: 25px 0 14px;
+    }
+
+    .countdown .title {
+      font-size: 33px;
+    }
+
+    .countdown .tips {
+      margin-top: 80px;
+      font-size: 23px;
+    }
+
+    .countdown small {
+      font-size: 17px;
+    }
+
+    .countdown .clock {
+      width: 142px;
+      margin: 18px auto 0;
+      overflow: hidden;
+    }
+
+    .countdown .clock span,
+    .countdown .clock i {
+      display: block;
+      text-align: center;
+      line-height: 34px;
+      font-size: 23px;
+      float: left;
+    }
+
+    .countdown .clock span {
+      width: 34px;
+      height: 34px;
+      border-radius: 2px;
+      background-color: #303430;
+    }
+
+    .countdown .clock i {
+      width: 20px;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="countdown">
+    <p class="next">今天是2022年7月17日</p>
+    <p class="title">明天倒计时</p>
+    <p class="clock">
+      <span id="hour">00</span>
+      <i>:</i>
+      <span id="minutes">25</span>
+      <i>:</i>
+      <span id="second">20</span>
+    </p>
+    <p class="tips">
+      现在是18:30:00
+    </p>
+  </div>
+
+  <script>
+
+    time();
+    setInterval(time, 1000);
+    function time() {
+
+      // 获取元素
+      let next = document.querySelector('.next');
+      let tips = document.querySelector('.tips');
+      let hour = document.querySelector('#hour');
+      let minutes = document.querySelector('#minutes');
+      let second_btn = document.querySelector('#second');
+
+      // 今天的时间【格式转换】
+      // 明天的时间 - 今天的时间 = 转换为秒，转换为时分秒
+      let last = +new Date('2022-07-18 12:00:00');
+      let now = +new Date();
+      let date = new Date();
+      let month = date.getMonth() + 1;
+      let days = date.getDate();
+      let current_hour = date.getHours();
+      let current_minutes = date.getMinutes();
+      let current_second = date.getSeconds();
+
+      month = month < 10 ? '0' + month : month;
+      days = days < 10 ? '0' + days : days;
+      current_hour = current_hour < 10 ? '0' + current_hour : current_hour;
+      current_minutes = current_minutes < 10 ? '0' + current_minutes : current_minutes;
+      current_second = current_second < 10 ? '0' + current_second : current_second;
+      next.innerHTML = `今天是${date.getFullYear()}年${month}月${days}日`
+      tips.innerHTML = `现在是${current_hour}:${current_minutes}:${current_second}`
+
+      let second = (last - now) / 1000;
+      d = parseInt(second / 60 / 60 / 24); // 计算天数
+      h = parseInt(second / 60 / 60 % 24) // 计算小时
+
+      h = h < 10 ? '0' + h : h;
+      m = parseInt(second / 60 % 60); // 计算分数
+      m = m < 10 ? '0' + m : m;
+      s = parseInt(second % 60); // 计算当前秒数
+      s = s < 10 ? '0' + s : s;
+
+
+      hour.innerHTML = h;
+      minutes.innerHTML = m;
+      second_btn.innerHTML = s;
+
+
+    }
+  </script>
+
+</body>
+
+</html>

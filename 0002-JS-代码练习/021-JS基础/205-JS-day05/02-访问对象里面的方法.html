@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 访问对象里面的方法
+        let person = {
+            name: '张三',
+            age: 23,
+            gender: '男',
+            sayHi: function () {
+                alert('你好~')
+            },
+            move: function (s){
+                console.log(`${this.name}在${s}~`);
+            }
+        }
+
+        console.log(person.name);
+        console.log(person.age);
+        console.log(person.gender);
+        person.sayHi();
+        person.move('散步');
+        
+    </script>
+</body>
+
+</html>

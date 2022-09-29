@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 实现两个数的值交换(函数版本) 
+        (function wrap(x,y){
+            let temp = x;
+            x = y;
+            y = temp;
+            console.log(`交换后的x:${x},y:${y}`);
+        })(10,20);
+
+    </script>
+</body>
+</html>

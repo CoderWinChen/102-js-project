@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            overflow: auto;
+            width: 150px;
+            height: 150px;
+            padding: 10px 0;
+            /* 设置了margin */
+            margin: 100px 0; 
+            background-color: pink;            
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        我是内容哈哈哈哈哈
+        我是内容哈哈哈哈哈
+        我是内容哈哈哈哈哈
+        我是内容哈哈哈哈哈
+        我是内容哈哈哈哈哈
+        我是内容哈哈哈哈哈
+        我是内容哈哈哈哈哈
+        我是内容哈哈哈哈哈
+        我是内容哈哈哈哈哈
+        我是内容哈哈哈哈哈
+        我是内容哈哈哈哈哈
+        我是内容哈哈哈哈哈
+    </div>
+
+    <script>
+        let div = document.querySelector('div');
+        // 获取盒子自身宽高，包括padding和border
+        console.log(div.offsetHeight); //150px
+        console.log(div.offsetWidth);  //150px
+        
+        // 加上padding:10px 0 之后，得到的宽是170px
+        console.log(div.offsetWidth); //170px
+        console.log(div.offsetHeight); //150px
+
+        //获取父级的定位元素的距离【父级没有就祖先级别，只要有定位元素的】
+        // 因为设置了margin：100px 并且父级是body，body没有定位，所以以浏览器为标准，距离浏览器为100px
+        console.log(div.offsetTop);  //100px
+        console.log(div.offsetLeft); //body默认会有8px的距离
+        
+    </script>
+</body>
+
+</html>

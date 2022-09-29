@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点我</button>
+
+    <script>
+        // 匿名函数，没有函数名，通过赋值给一个变量，通过变量名()调用函数表达式
+        let fn = function () {
+            alert(111)
+        }
+        fn()
+
+        let btn = document.querySelector('button');
+        btn.onclick = function () {
+            alert("我被点击了")
+        }
+    </script>
+</body>
+
+</html>

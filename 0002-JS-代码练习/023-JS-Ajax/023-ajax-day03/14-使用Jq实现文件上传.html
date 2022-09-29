@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <style>
+        #loading {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="file" name="avatar" id="file-btn">
+    <button>提交</button>
+    <br>
+
+    <img src="./upload/loading.gif" alt="" id="loading">
+    <img src="" alt="" width="800" id="upload-img">
+
+
+    <script>
+        $(function () {
+            let file = $('#file-btn')[0];
+            $('button').click(function () {
+                if (file.files.length <= 0) {
+                    alert('请上传文件')
+                }
+                console.log(file.files);
+                let formData = new FormData()
+                formData.append('avatar', file.files[0])
+
+                // 监听当前页面所有的ajax请求，开始发送ajax请求时调用
+                $(document).ajaxStart(function () {
+                    $('#loading').show() //相当于js的display：block
+                })
+
+                // 监听当前页面所有的ajax请求，发送ajax请求后调用
+                $(document).ajaxStop(function () {
+                    $('#loading').hide() //相当于js的display：none
+                })
+
+
+                $.ajax({
+                    method: 'POST',
+                    url: 'http://www.liulongbin.top:3006/api/upload/avatar',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (res) {
+                        console.log(res);
+                        if (res.status === 200) {
+                            console.log('上传成功');
+                            $('#upload-img')[0].src = `http://www.liulongbin.top:3006` + res.url;
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

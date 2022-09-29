@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 作用域分为全局作用域，局部作用域【函数作用域】和块作用域，除了大括号就不认识了
+        let num = 10; //全局变量，作用范围全局作用域，任何地方都可以使用
+
+        function fn() {
+            console.log(num); //里面的可以用外面的
+        }
+        fn()
+
+        // 嵌套函数
+        function f1(){
+            let num = 20;
+            function f2(){
+                let one = 1;
+                console.log(`f2->${num}`); //里面用的是局部作用域，也可用最外面的全局作用域，但是会就近原则
+            }
+            f2()
+            // 外面不能用里面的
+            console.log(`f1->${one}`);
+        }
+
+        f1()
+        
+
+
+    </script>
+</body>
+
+</html>

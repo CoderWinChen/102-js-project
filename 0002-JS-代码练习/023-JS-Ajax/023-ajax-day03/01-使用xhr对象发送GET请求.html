@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ajax底层是使用xhr对象进行发送请求的
+
+        // 第一步：创建xhr对象
+        let xhr = new XMLHttpRequest()
+        
+        // 第二步：调用open方法创建请求，传递【请求方式，请求URL】
+        xhr.open('GET','http://localhost:9000/getAllBooks')
+        //第三步：发送请求
+        xhr.send()
+        
+        // 第四步：处理响应结果
+
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState === 4 && xhr.status === 200){
+                console.log(xhr.responseText);
+                alert('发送请求成功')
+            }
+            else {
+                alert('请求失败')
+            }
+        }
+    </script>
+</body>
+</html>

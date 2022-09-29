@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            overflow: auto;
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- scroll 家族 -->
+    <div>
+        我是内容哈哈哈哈哈哈哈哈哈
+        我是内容哈哈哈哈哈哈哈哈哈
+        我是内容哈哈哈哈哈哈哈哈哈
+        我是内容哈哈哈哈哈哈哈哈哈
+        我是内容哈哈哈哈哈哈哈哈哈
+        我是内容哈哈哈哈哈哈哈哈哈
+        我是内容哈哈哈哈哈哈哈哈哈
+        我是内容哈哈哈哈哈哈哈哈哈
+        我是内容哈哈哈哈哈哈哈哈哈
+        我是内容哈哈哈哈哈哈哈哈哈
+        我是内容哈哈哈哈哈哈哈哈哈
+        我是内容哈哈哈哈哈哈哈哈哈
+    </div>
+
+    <script>
+        let div = document.querySelector('div');
+        console.log(div.scrollHeight); //高度是内容的高度，不止150
+        console.log(div.scrollWidth); //宽度是内容的宽度：150px
+        div.addEventListener('scroll', function () {
+            console.log(div.scrollTop); //往上卷的部分的高度 ，可以得到页面往上卷的距离就是页面滚动的距离
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 实现媒体查询效果
+        window.addEventListener('resize',function(){
+            let screenWidth = document.documentElement.clientWidth;
+            if (screenWidth < 540){
+                document.body.style.backgroundColor = 'pink'
+            }
+            else if (screenWidth < 780){
+                document.body.style.backgroundColor = 'skyblue'
+            }
+            else if (screenWidth <1226){
+                document.body.style.backgroundColor = 'green'
+            }
+            else {
+                document.body.style.backgroundColor = 'orange'
+            }
+        })
+    </script>
+</body>
+</html>

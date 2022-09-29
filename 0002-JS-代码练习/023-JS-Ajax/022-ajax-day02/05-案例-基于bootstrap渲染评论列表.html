@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/cmt.js"></script>
+</head>
+
+<body style="padding: 15px;">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">发表评论</h3>
+        </div>
+        <form class="panel-body">
+
+            <div class="input-group">
+                <h5>评论人：</h5>
+                <input type="text" class="form-control" placeholder="请输入评论人" id="comm_user" name="username">
+            </div>
+            <div class="input-group">
+                <h5>评论内容：</h5>
+                <textarea name="content" id="content" class="form-control" required="required" placeholder="请输入评论内容（最多120字）"
+                    maxlength="120"></textarea>
+
+            </div>
+
+            <button class="btn btn-primary" type="submit">发表评论</button>
+
+            </form>
+
+            <ul class="list-group">
+                <!-- <li class="list-group-item">
+                    <span class="comm_content">欢迎大家</span>
+                    <span class="badge list-group-item-warning" id="comm_time">评论时间：2020-07-27</span>
+                    <span class="badge list-group-item-info" id="comm_name">评论人：小红</span>
+                </li> -->
+            </ul>
+
+
+      
+    </div>
+
+</body>
+
+</html>

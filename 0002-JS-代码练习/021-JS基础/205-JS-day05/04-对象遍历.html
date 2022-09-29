@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象的遍历：对象没有下标，也没有长度，因为它是无序的数据集合，所以遍历只能用for k in 
+    let person = {
+        name: '张三',
+        age: 23,
+        gender: '男'
+    }
+    
+    for (const k in person) {
+        
+        console.log(k); //k是属性名
+        console.log(typeof(k));
+
+        // console.log(person.k); 结果是undefined，因为person里面没有k属性
+        console.log(person[k]); 
+
+        // 调试看到的k是黑色，就是字符串
+        // k === 'name' === 'age' === 'gender'
+    }
+    </script>
+</body>
+</html>

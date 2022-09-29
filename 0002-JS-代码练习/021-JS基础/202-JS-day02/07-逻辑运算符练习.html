@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 需求：用户输入一个，判断这个数能被4整除，但是不能被100整除
+        let num = prompt('请输入一个数字:');
+        if (num % 4 === 0 && (num%100 !== 0)){
+            console.log('能被4整除，不能被100整除');
+        }
+        else {
+            console.log('有误');
+        }
+
+
+        num = prompt('请输入:');
+        // 用户如果不输入当作0看,不输入就是undefined，就是false，会执行右边的表达式
+        num = num || 0;
+        console.log(num); //0
+        console.log(num % 4 === 0 && num % 100 !==0);
+    </script>
+</body>
+</html>

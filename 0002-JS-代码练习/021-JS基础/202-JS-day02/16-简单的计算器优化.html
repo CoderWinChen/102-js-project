@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 这里用了+号，会将字符串转换为数字
+        let num1 = +prompt('请输入第一个数:')
+        let sp = prompt('请输入运算符')
+          // 这里用了+号，会将字符串转换为数字
+        let num2 = +prompt('请输入第一个数:')
+        switch (sp){
+            case '+':
+                alert(`你输入的是加法,结果是：${num1+num2}`)
+                break
+                case '-':
+                alert(`你输入的是减法,结果是：${num1 - num2}`)
+                break
+                case '*':
+                alert(`你输入的是乘法,结果是：${num1 * num2}`)
+                break
+                case '/':
+                alert(`你输入的是除法,结果是：${num1 / num2}`)
+                break
+                default:
+                    alert('数字非法')
+
+        }
+    </script>
+</body>
+</html>

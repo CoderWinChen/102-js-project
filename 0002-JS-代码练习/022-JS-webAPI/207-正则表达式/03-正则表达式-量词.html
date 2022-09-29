@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 量词 *,表示*前面的字符可以出现0~n次
+        console.log(/a*/.test('a')); //true
+        console.log(/a*/.test('')); //true,a可以出现0次
+        console.log(/a*/.test('aaa')); //true
+        console.log(/a*/.test('b')); //true,a可以出现0次
+
+
+        console.log('-------------');
+        // n>=1 ,+前面的可以出现1~n次
+        console.log(/a+/.test('a')); //true,可以出现1次
+        console.log(/a+/.test('')); // false
+        console.log(/a+/.test('aaa')); //true
+        console.log(/a+/.test('b')); //false
+
+        console.log('-------------');
+        // n = 0 || 1, ?前面的可以出现 0 或者1次
+        console.log(/^a?$/.test('a')); //true,可以出现1次
+        console.log(/^a?$/.test('')); // true,可以出现0次
+        console.log(/^a?$/.test('aa')); //false,两次不行
+        console.log(/^a?$/.test('b')); //false
+
+        console.log('-------------');
+        // {n}表示只能出现n次
+        console.log(/^a{3}$/.test('a')); //false,只能出现3次
+        console.log(/^a{3}$/.test('')); // false
+        console.log(/^a{3}$/.test('aa')); //false,两次不行
+        console.log(/^a{3}$/.test('aaa')); //true
+
+
+        console.log('-------------');
+        // n>=3
+        console.log(/^a{3,}$/.test('a')); //false
+        console.log(/^a{3,}$/.test('aa')); // false
+        console.log(/^a{3,}$/.test('aaa')); //true
+        console.log(/^a{3,}$/.test('aaaa')); //true
+
+        console.log('-------------');
+        // n>=3 && n<=6
+        console.log(/^a{3,6}$/.test('a')); //false
+        console.log(/^a{3,6}$/.test('aa')); // false
+        console.log(/^a{3,6}$/.test('aaa')); //true
+        console.log(/^a{3,6}$/.test('aaaa')); //true
+        console.log(/^a{3,6}$/.test('aaaaaaa')); //false
+    </script>
+</body>
+
+</html>

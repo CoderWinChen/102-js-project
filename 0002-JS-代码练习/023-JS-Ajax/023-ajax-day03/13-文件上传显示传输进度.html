@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./js/jquery-1.12.4.min.js">
+    <style>
+        .progress {
+             margin: 15px 10px;
+             width: 500px;
+             display: none;
+        }
+
+        #precent {
+            width: 0%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <form action="" method="POST">
+        <input type="file" name="avatar" id="file-btn">
+        <br>
+        <button type="submit">提交</button>
+        <br>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" id="precent">
+                0%
+            </div>
+        </div>
+        <img src="" alt="" width="800">
+    </form>
+
+    <script>
+        let form = document.querySelector('form')
+        let file = document.querySelector('#file-btn')
+        let img = document.querySelector('img')
+        let progress = document.querySelector('.progress')
+        let precent = document.querySelector('#precent')
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()
+            if (file.files.length <= 0) {
+                return alert('请上传文件')
+            }
+            let xhr = new XMLHttpRequest()
+            // 显示上传的进度
+            xhr.upload.onprogress = function (e) {
+                // 拿到数据
+                if (e.lengthComputable) {
+                    let load_speed = Math.ceil((e.loaded / e.total) * 100)
+                    console.log(load_speed);
+                    progress.style.display = "block"
+                    precent.style.width = `${load_speed}%`
+                    // precent.style.width = `100%`d
+                    precent.innerText = load_speed
+                }
+            }
+
+            // 上传成功的回调函数
+            xhr.upload.onload = function(){
+                // 移出动态效果，改变颜色为绿色
+                precent.classList.remove('active')
+                precent.classList.add('progress-bar-success')
+            }
+            
+            xhr.open('POST', 'http://www.liulongbin.top:3006/api/upload/avatar')
+            let formData = new FormData(form)
+            xhr.send(formData)
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let data = JSON.parse(xhr.responseText)
+                    if (data.status === 200) {
+                        img.src = 'http://www.liulongbin.top:3006' + data.url
+                    }
+                    else {
+                        console.log('文件上传失败', data.message);
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

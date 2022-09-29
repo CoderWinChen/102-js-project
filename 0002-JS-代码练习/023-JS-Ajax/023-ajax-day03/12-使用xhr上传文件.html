@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 第一步：渲染UI结构 -->
+    <form>
+        <input type="file" name="" id="btn-file" multiple>
+        <button type="submit" id="btn">提交</button>
+                <br>
+        <img src="" alt="" width="800">
+    </form>
+    <script>
+        let xhr = new XMLHttpRequest()
+        // 拿到的是文件的数组
+        let file = document.querySelector('#btn-file')
+        let btn = document.querySelector('#btn')
+        let img = document.querySelector('img')
+
+        btn.addEventListener('click', function (e) {
+            e.preventDefault()
+            if (file.length <= 0) {
+                return alert('请选择文件')
+            }
+            xhr.open('POST', 'http://www.liulongbin.top:3006/api/upload/avatar')
+            let formData = new FormData();
+            formData.append('avatar', file.files[0]);
+            xhr.send(formData)
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    let data = JSON.parse(xhr.responseText);
+                    if (data.status === 200){
+                        console.log('文件上传成功');
+                        img.src = 'http://www.liulongbin.top:3006'+data.url
+                    }
+                    else {
+                        console.log('文件上传失败',data.message);
+                    }
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>

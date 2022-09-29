@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+        // 数据数组
+        // let arr = ['马超', '黄忠', '赵云', '关羽', '张飞']
+        let arr = ['马超', '黄忠']
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+
+
+
+        let start_btn = document.querySelector('.start')
+        let end_btn = document.querySelector('.end')
+        let qs = document.querySelector('.qs')
+
+        // 点击开始，使用定时器随机显示名字，点击结束，清除定时器
+        let timer, random;
+        start_btn.addEventListener('click', function () {
+            timer = setInterval(() => {
+                random = getRandom(0, arr.length - 1);
+                qs.innerText = arr[random];
+            }, 100);
+            if (arr.length === 1) {
+                start_btn.disabled = end_btn.disabled = true
+            }
+        })
+
+        // 本质是停止定时器
+        end_btn.addEventListener('click', function () {
+            arr.splice(random, 1);
+            clearInterval(timer);
+        })
+
+
+    </script>
+</body>
+
+</html>

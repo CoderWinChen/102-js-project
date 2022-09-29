@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 立即执行函数的调用方法和匿名函数一样，只是自己调用自己，立即执行
+
+        // 匿名函数
+        // let fn = function(){
+        //     console.log(111);
+        // }
+        // fn()
+
+        // 上面的fn相当于function(){}，
+        // 这一部分作为一个函数名，函数名需要用括号括起来，不然不匹配，后面接()表示调用
+        // (function () {
+        //     console.log(111);
+        // })()
+
+
+            // 自己调用自己
+            (function (x, y) {
+                // console.log(x + y);
+                alert(x + y);
+            })(1, 2);
+
+
+            (function (num1,num2) {
+                console.log(num1-num2);
+            })();
+    </script>
+</body>
+
+</html>

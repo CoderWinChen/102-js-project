@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <script>
+        // 把函数作为一个值赋值给一个变量，这就是函数表达式
+        let fn = function(){
+            console.log('111');
+        }
+        fn()
+
+        // 回调函数，把函数作为参数进行调用，这个作为参数的函数就叫回调函数
+        setInterval(function(){
+            // 这个匿名函数就叫回调函数，因为它作为了参数
+        },1000)
+
+        let btn = document.querySelector('button');
+        function fun(){
+            console.log(123);
+        }
+        // 这个fun就是回调函数
+        btn.addEventListener('click',fun);
+    </script>
+</body>
+</html>

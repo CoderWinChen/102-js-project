@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .success {
+            color: green;
+            background: url(./images/right.png) no-repeat left center;
+        }
+        .error {
+            color: red;
+            background: url(./images/error1.png) no-repeat left center;
+        }
+        span {
+            display: inline-block;
+            width: 300px;
+            height: 30px;
+            /* padding-left: 30px; */
+            text-align: left;
+            line-height: 30px;
+            vertical-align: middle;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="">
+    <span></span>
+
+    <script>
+        let input = document.querySelector('input');
+        let span = input.nextElementSibling;
+        input.addEventListener('blur',function(){
+            if (/^[a-zA-Z0-9-_]{6,16}$/.test(input.value)) {
+                span.innerHTML = '正确'
+                span.className = "success"
+            }
+            else {
+                span.innerHTML = '请输入6-16位的字符'
+                span.className = "error"
+            }
+        })
+    </script>
+</body>
+</html>

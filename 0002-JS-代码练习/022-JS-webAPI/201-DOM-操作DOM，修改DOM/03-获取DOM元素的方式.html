@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+    <div id="two"></div>
+    <div class="three"></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+        let div = document.querySelector('div'); //拿到div标签，只是拿到第一个
+        let divTwo = document.querySelector('#two'); //拿到第二个div标签
+        let divThree = document.querySelector('.three');
+        let li = document.querySelector('ul li:last-child');
+
+        console.log(div);
+        console.log(divTwo);
+        console.log(divThree);
+        console.log(li);
+
+    </script>
+</body>
+
+</html>

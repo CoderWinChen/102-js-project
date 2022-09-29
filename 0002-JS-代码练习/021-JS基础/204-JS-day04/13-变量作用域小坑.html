@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函数内部或者块作用域的变量【没有声明，但是赋值了】，会当作全局变量来看，外面的就可以访问了
+
+        function fn(){
+            num = 10;
+        }
+        fn()
+        console.log(num);
+
+        if(1){
+            one = 20;
+        }
+        console.log(one);
+    </script>
+</body>
+</html>

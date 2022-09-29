@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <form method="GET">
+        <input type="text" name="id" id="">
+        <button type="submit">提交</button>
+    </form>
+    <script>
+        $('form').submit(function (e) {
+            e.preventDefault()
+            $.get(
+                "http://localhost:9000/getBookById",
+                // 这里传递的可以是对象，或者是key=value的格式，都会被解析为 url?key=value
+                $('form').serialize(),
+                function(res){
+                    console.log(res);
+                }
+            )
+
+            // $.ajax({
+            //     type: 'GET',
+            //     url: 'http://localhost:9000/getBookById',
+            //     // 这里的data里面的数据都会被解析为查询字符串,即url?id=1=>http://localhost:9000/getBookById?id=1
+            //     data: {
+            //         id: $('input').val()
+            //     },
+            //     success: function (res) {
+            //         console.log(res);
+            //     },
+            //     error:function(err){
+            //         console.log(err);
+            //     }
+            // })
+        })
+
+    </script>
+</body>
+
+</html>

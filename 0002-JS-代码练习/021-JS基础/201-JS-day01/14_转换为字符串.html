@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*  转化为字符串有两种方式
+        1. String(其他类型的数据)
+        2. 变量.toString()
+        3. 转换为其他进制，例如转换为2进制，toString()里面放2 */
+        console.log(String(123)); //显示的是黑色，说明是字符串
+
+        let age = 18;
+        console.log(age.toString()); //变量.toString()
+
+        age = 10;
+        console.log(age.toString(2)); //转换为2进制的字符串 1010
+    </script>
+</body>
+</html>

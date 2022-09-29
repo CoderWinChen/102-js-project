@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 对象的增删改查
+        let person = {
+            name: '张三',
+            age: 23
+        }
+        // 访问对象【查】
+        console.log(person['name']);
+        console.log(person.age);
+
+        // 增/改
+        //【如果原来的对象没有该方法，则会新增该方法】
+        person.sing = function(){
+            console.log('唱歌~');
+        }
+        person.sing() //调用
+        console.dir(person); //查看该对象的所有信息
+        
+        person.gender = '男'; //增 【没有就增加】
+        console.log(person.gender);
+
+        person.name = '李四'; //有就是改
+        console.log(person);
+
+        delete person.age; //删除
+        console.log(person);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: pink;
+            text-align: center;
+            line-height: 100px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        let div = document.querySelector('div');
+        let arr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        // 在外面调用一次，不用等1s
+        getTime()
+        //由于定时器是1s后进行调用，所以先在外面调用一次就不会出现间隙
+        setInterval(getTime,1000);
+        function getTime() {
+                let date = new Date(); //实时更新写在里面
+                let year = date.getFullYear();
+                let month = date.getMonth() + 1;
+                let days = date.getDate(); //从0开始，可以作为数组的下标
+                let hour = date.getHours();
+                let minutes = date.getMinutes();
+                let second = date.getSeconds();
+                let day = date.getDay();
+                div.innerHTML = `${year}年${month}月${days}日 ${hour}时${minutes}分${second}秒 ${arr[day]}`
+            }
+    </script>
+</body>
+
+</html>

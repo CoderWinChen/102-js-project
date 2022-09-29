@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <!-- jq中绑定表单提交的方法有两种 -->
+    <form action="/login">
+        姓名：<input type="text" name="username" id="">
+        <br><br>
+        密码：<input type="password" name="password" id="">
+        <br><br>
+        <input type="submit" value="登录">
+    </form>
+
+    <script>
+        $(function () {
+            // 方法一：通过submit方法获取表单提交
+            // $('form').submit(function (e) {
+            //     e.preventDefault()
+            //     alert(1)
+            // })
+
+            $('form').on('submit',function(e){
+                e.preventDefault()
+                alert(12)
+            })
+        })
+    </script>
+</body>
+
+</html>

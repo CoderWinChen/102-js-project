@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 100px;
+            height: 35px;
+            border: 1px solid pink;
+            line-height: 35px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    抽中的选手是: <div></div>
+    <script>
+        let heros = ['刘备', '关羽', '张飞', '赵云', '黄忠', '刘禅']
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        let random = getRandom(0, heros.length - 1);
+        let div = document.querySelector('div');
+        div.innerText = heros[random];
+        heros.splice(random, 1);
+    </script>
+</body>
+
+</html>

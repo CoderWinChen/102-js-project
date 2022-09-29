@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 22px;
+        }
+
+        input {
+            width: 200px;
+            margin-top: 10px;
+            height: 30px;
+            vertical-align: middle;
+            outline: none;
+        }
+
+        .box {
+            padding: 100px 0 0 50px;
+        }
+
+        .code {
+            width: 50px;
+        }
+
+        .code_btn {
+            width: 150px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        手机号：<input type="text"><br>
+        验证码：<input type="text" class="code">
+        <input type="button" value="获取验证码" class="code_btn">
+    </div>
+    <script>
+        let code_btn = document.querySelector('.code_btn');
+        code_btn.addEventListener('click', function () {
+            let second = 5; //放在里面，可以重置
+            code_btn.disabled = true;
+            let timer = setInterval(function () {
+                code_btn.value = `${second--}秒后重新获取`;
+                if (second <0) {
+                    clearInterval(timer)
+                    code_btn.value = '获取验证码'
+                    code_btn.disabled = false;
+                }
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>

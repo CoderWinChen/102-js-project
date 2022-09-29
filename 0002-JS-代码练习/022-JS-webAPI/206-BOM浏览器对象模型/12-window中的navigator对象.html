@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 获取当前浏览器信息
+        console.log(window.navigator.userAgent);
+        // Mozilla / 5.0(Windows NT 10.0; Win64; x64[浏览器版本5.0,电脑版本win10 x64]
+    
+        //  AppleWebKit / 537.36(KHTML, like Gecko) [webkit内核]
+        //  Chrome / 95.0.4638.54 Safari / 537.36 [谷歌]
+
+        // 检测 userAgent（浏览器信息）
+            !(function () {
+                const userAgent = navigator.userAgent
+                // 验证是否为Android或iPhone
+                const android = userAgent.match(/(Android);?[\s\/]+([\d.]+)?/)
+                const iphone = userAgent.match(/(iPhone\sOS)\s([\d_]+)/)
+                // 如果是Android或iPhone，则跳转至移动站点
+                if (android || iphone) {
+                    location.href = 'http://m.itcast.cn'
+                }
+            })()
+        
+    </script>
+</body>
+</html>

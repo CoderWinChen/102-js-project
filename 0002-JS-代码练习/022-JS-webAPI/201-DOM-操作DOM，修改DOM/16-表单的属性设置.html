@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- 获取和设置 -->
+    <input type="text" value="请输入">
+    <button disabled>按钮</button>
+    <input type="checkbox" name="" id="">
+    <script>
+        let input = document.querySelector('input');
+        console.log(input.value); //获取文本框的value
+        input.value = '请输入密码框' //设置文本框的value
+        input.type = 'password'; //设置为密码框
+
+        // 启用禁用框
+        let btn = document.querySelector('button');
+        // console.log(btn.disabled);
+        btn.disabled = false
+
+        // 选中多选框
+        let checkbox = document.querySelector('input[type="checkbox"]');
+        console.log(checkbox.checked);
+        checkbox.checked = true;
+    </script>
+</body>
+
+</html>

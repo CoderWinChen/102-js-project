@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <div class="title"></div>
+    <div class="name"></div>
+    <div class="age"></div>
+    <div class="isVIP"></div>
+    <div class="regTime"></div>
+    <ul class="hobby">
+        
+    </ul>
+    <script>
+        var data = {
+            title: '<h3>用户信息</h3>',
+            name: 'zs',
+            age: 20,
+            isVIP: true,
+            regTime: new Date().toLocaleString(),
+            hobby: ['吃饭', '睡觉', '打豆豆']
+        }
+
+        $('.title').html(data.title)
+        $('.name').html(`姓名：${data.name}`)
+        $('.age').html(`年龄：${data.age}`)
+        $('.isVIP').html(`会员：${data.isVIP}`)
+        $('.regTime').html(`注册时间：${data.regTime}`)
+        $(data.hobby).each(function(i,item){
+            $('.hobby').append(
+                `
+                <li>${item}</li>            
+                `
+            )
+        })
+    </script>
+</body>
+
+</html>

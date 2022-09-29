@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let balance = 200;
+        while (1) {
+            let sp = +prompt(`
+    请选择您的操作:
+        1.取款
+        2.存款
+        3.查看余额
+        4.退出`)
+        
+        if (sp === 1){
+            let withdraw = +prompt('请输入取出的金额')
+            balance -=withdraw;
+        }
+        else if (sp === 2) {
+              let deposit = +prompt('请输入存入的金额')
+            balance += deposit;
+        }
+        else if (sp === 3) {
+            alert(`您的余额为:${balance}`)
+        }
+        else if (sp === 4){
+            break;
+        }
+        else {
+            alert('操作非法')
+        }
+    }
+    </script>
+</body>
+
+</html>

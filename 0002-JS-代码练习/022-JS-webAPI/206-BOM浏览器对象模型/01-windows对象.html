@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+         windows对象模型是最大的对象，浏览器对象模型，包含了navigator(检测浏览器版本类型)，location(网页跳转)
+         historys(控制前进和后退)，document(文档对象模型)
+    -->
+    <script>
+
+        console.log(window);
+        window.console.log(11)
+        window.addEventListener('scroll',function(){
+            console.log(233)
+        })
+    </script>
+</body>
+</html>

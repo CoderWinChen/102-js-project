@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/template-web.js"></script>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+</head>
+
+<body>
+    <div class="container"></div>
+    <script type="text/html" id="tpl-user">
+        标准时间：{{date | filterDate}}
+    </script>
+
+    <script>
+        let data = {
+            date: new Date()
+        }
+        template.defaults.imports.filterDate = function (date) {
+            let year = date.getFullYear();
+            let month = date.getMonth()+1;
+            let day = date.getDate();
+            return `${year}年${month}月${day}日`
+        }
+        // 将data数据渲染到tpl-user模板中,注意这里不能加#
+        let htmlStr = template('tpl-user', data);
+        $('.container').html(htmlStr)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 700px;
+            height: 320px;
+            background: url(./images/b01.jpg);
+            background-color: pink;
+        }
+
+        .banner {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 50px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .7);
+            padding-left: 10px;
+            box-sizing: border-box;
+            color: #fff;
+            line-height: 50px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="banner">
+            挑战云歌单，欢迎你来
+        </div>
+    </div>
+
+    <script>
+        // 轮播图切换
+
+        // 数据
+        let data = [
+            {
+                imgSrc: 'images/b01.jpg',
+                title: '挑战云歌单，欢迎你来'
+            },
+            {
+                imgSrc: 'images/b02.jpg',
+                title: '田园日记，上演上京记'
+            },
+            {
+                imgSrc: 'images/b03.jpg',
+                title: '甜蜜攻势再次回归'
+            },
+            {
+                imgSrc: 'images/b04.jpg',
+                title: '我为歌狂，生为歌王'
+            },
+            {
+                imgSrc: 'images/b05.jpg',
+                title: '年度校园主题活动'
+            },
+            {
+                imgSrc: 'images/b06.jpg',
+                title: 'pink老师新歌发布，5月10号正式推出'
+            },
+            {
+                imgSrc: 'images/b07.jpg',
+                title: '动力火车来到西安'
+            },
+            {
+                imgSrc: 'images/b08.jpg',
+                title: '钢铁侠3，英雄镇东风'
+            },
+            {
+                imgSrc: 'images/b09.jpg',
+                title: '我用整颗心来等你'
+            },
+        ]
+        let box = document.querySelector('.box');
+        let banner = document.querySelector('.banner');
+
+        let i = 0;
+        let timer = setInterval(() => {
+            banner.innerHTML = data[i].title;
+            box.style.background = `url(${data[i].imgSrc})`
+            // 如果是先在html设置好图片，那么i++要放在最前面，因为第一张已经显示了，直接显示第二张即可
+            i++
+            // if (i === data.length) {
+            //     i = 0;
+            // }
+            i = i === data.length ? 0 : i;
+        }, 1000);
+
+
+
+    </script>
+</body>
+
+</html>

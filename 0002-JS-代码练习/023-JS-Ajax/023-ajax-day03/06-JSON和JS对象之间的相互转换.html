@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JSON是js对象的字符串表示法,本质是一个字符串
+         let json = '{"name":"张三","age":123,"gender":"男"}'; //JSON
+         
+        //  JSON转换为对象
+        let obj = JSON.parse(json);
+        console.log(obj);
+
+        let obj2 = {
+            name:'李四',
+            age:24,
+            gender:'男'
+        }
+        console.log(JSON.stringify(obj2));
+        
+    </script>
+</body>
+</html>

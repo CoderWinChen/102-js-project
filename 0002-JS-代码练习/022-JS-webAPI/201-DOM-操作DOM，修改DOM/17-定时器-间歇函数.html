@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 单位是毫秒，1000毫秒 = 1s，每隔1s执行函数体
+        let index = setInterval(function () {
+            console.log('努力奋斗');
+        }, 1000)
+
+        function strive() {
+            console.log('月薪过万');
+        }
+        let timer = setInterval(strive, 1000);
+
+        console.log(index); //1，返回的是定时器的序号，第一个定时器为1，第二个为2
+        console.log(timer);  //2
+
+        // 清除定时器，传递的是定时器的序号
+        clearInterval(index)
+        clearInterval(timer)
+    </script>
+</body>
+
+</html>

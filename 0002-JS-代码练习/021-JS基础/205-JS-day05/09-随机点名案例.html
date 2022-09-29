@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 50px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button>随机点名</button>
+    <div id="one"></div>
+    <script>
+        // 需求：请把[‘赵云’, ‘黄忠’, ‘关羽’, ‘张飞’, ‘马超’, ‘刘备’, ‘曹操’]随机显示一个名字到页面中
+        let hero = ['赵云', '黄忠', '关羽', '张飞', '马超', '刘备', '曹操'];
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // 随机生成数组索引号
+        let randomIndex = getRandom(0, hero.length - 1);
+        document.write(hero[randomIndex]);
+
+    </script>
+</body>
+
+</html>

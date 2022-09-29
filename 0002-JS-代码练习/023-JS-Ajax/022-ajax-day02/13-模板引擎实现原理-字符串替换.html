@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let div = '<div>我叫{{name}}，今年{{ age }}岁了</div>';
+        // \s表示空白字符串
+        let reg = /{{\s*([a-zA-Z]+)\s*}}/;
+        // console.log(reg.exec(div));
+        let result = reg.exec(div);
+
+        // 将{{name}}替换成name
+        div = div.replace(result[0], result[1])
+
+        result = reg.exec(div);
+
+        // 将{{name}}替换成name
+        div = div.replace(result[0], result[1])
+        console.log(div);
+
+    </script>
+</body>
+
+</html>

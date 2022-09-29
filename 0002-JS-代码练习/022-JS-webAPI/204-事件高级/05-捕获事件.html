@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        let father = document.querySelector('.father')
+        let son = document.querySelector('.son')
+        // 第三个参数表示开启事件捕获，会从祖先元素开始触发【同名事件】，例如：点击儿子，会先触发爷爷，再触发父亲
+        father.addEventListener('click', function () {
+            alert('我是父亲')
+        }, true);
+        son.addEventListener('click', function () {
+            alert('我是儿子')
+        }, true);
+        document.addEventListener('click', function () {
+            alert('我是爷爷')
+        }, true);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = '<div>我是{{name}}</div>'
+        // 大小写字母中至少有1个
+        let reg = /{{([a-zA-Z]+)}}/
+        // 拿到的是插值表达式里面的值
+        console.log(reg.exec(str));
+    </script>
+</body>
+</html>

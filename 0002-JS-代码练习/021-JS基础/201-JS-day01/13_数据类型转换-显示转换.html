@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(Number('10.99')); // 将字符串转换为数字10.99
+        console.log(parseInt('10.99')); //将字符串转换为数字，10
+        
+        /* Number()和parseInt的区别：
+            Number()不能转换带有'abc'这样的字符串，只能转换数字字符串
+            parseInt()可以转换带有'abc'的字符串
+            例如：【parseInt('10.3abc')】，但是注意非数字字符不能作为开头
+            10.3abc 会被转换为10.3
+            通常用于单位的过滤，如果服务器传递的是10.55px,那么可以使用parseInt而不能用Number()
+        */
+        
+       console.log(Number('10.55px')); //结果为NaN： Not a Number【不是一个数字】
+       console.log(parseInt('10.55px'));
+
+       console.log(parseFloat('10.99px')); //10.99
+    </script>
+</body>
+</html>

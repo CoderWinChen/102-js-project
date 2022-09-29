@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body style="padding: 15px;">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">添加新图书</h3>
+        </div>
+        <div class="panel-body form-inline">
+
+            <div class="input-group">
+
+                <div class="input-group">
+                    <div class="input-group-addon">书名</div>
+                    <input type="text" class="form-control" id="name" placeholder="请输入书名">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-addon">作者</div>
+                    <input type="text" class="form-control" id="author" placeholder="请输入作者">
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-addon">出版社</div>
+                    <input type="text" class="form-control" id="publisher" placeholder="请输入出版社">
+                </div>
+
+                <button id="btnAdd" class="btn btn-primary">添加</button>
+            </div>
+
+
+
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>书名</th>
+                        <th>作者</th>
+                        <th>出版社</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><a href="javascript:;"></a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+    <script>
+        $(function () {
+
+            render()
+            // $('tbody').on('click', function (e) {
+            //     if (e.target.tagName === 'A') {
+            //         remove(e.target.id)
+            //     }
+            // })
+
+            // jq的事件委托写法，第一个参数是事件，第二个参数是委派的子元素
+            $('tbody').on('click', '.del', function (e) {
+                remove(e.target.id)
+            })
+            function remove(id) {
+
+                $.get(
+                    "http://localhost:9000/removeBook",
+                    { id: id },
+                    function (res) {
+                        alert(res)
+                        render()
+                    }
+                )
+            }
+            function render() {
+                $.get(
+                    'http://localhost:9000/getAllBooks',
+                    function (res) {
+                        // console.log(res);
+                        let row = []
+                        $.each(res, function (i, item) {
+
+                            row.push(
+                                `
+                            <tr>
+                                <td>${item.id}</td>
+                                <td>${item.name}</td>
+                                <td>${item.author}</td>
+                                <td>${item.publisher}</td>
+                                <td><a href="javascript:;" class="del" id="${item.id}">删除</a></td>
+                            </tr>
+                        `)
+                        })
+                        // join()是将数组转换为字符串,empty()清空元素的内容
+                        $('tbody').empty().append(row.join())
+                    }
+                )
+            }
+
+            $('#btnAdd').click(function () {
+                addBook();
+            })
+
+            function addBook() {
+                let book = {
+                    "name": $('#name').val(),
+                    "author": $('#author').val(),
+                    "publisher": $('#publisher').val()
+                }
+
+                $.ajax(
+                    {
+                        type: 'post',
+                        dataType: 'text',
+                        contentType: 'application/json',
+                        url: "http://localhost:9000/addBook",
+                        data: JSON.stringify(book),
+                        success: function (res) {
+                            alert(res)
+                            render()
+                        }
+                    }
+                )
+
+                $('#name').val("")
+                $('#author').val("")
+                $('#publisher').val("")
+            }
+        })
+    </script>
+</body>
+
+</html>

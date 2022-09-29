@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery.js"></script>
+    <style>
+        table{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table width=1300 border="1">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>图片</th>
+                <th>出版号</th>
+                <th>规格</th>
+                <th>价格</th>
+                <th>出版公司</th>
+                <th>类别</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+
+    </table>
+    <script>
+
+        $.get('http://localhost:8080/getAllBooks', function (res) {
+            console.log(res);
+            console.log($('tbody'));
+            for (let i = 0; i < res.length; i++) {
+                let li = document.createElement('tr');
+                // 
+                li.innerHTML = `
+                        <td>${res[i].id}</td>
+                        <td>${res[i].name}</td>
+                        <td>${res[i].author}</td>
+                        <td>${res[i].img}</td>
+                        <td>${res[i].isbn}</td>
+                        <td>${res[i].pageFormate}</td>
+                        <td>${res[i].price}</td>
+                        <td>${res[i].publisher}</td>
+                        <td>${res[i].category}</td>
+                `
+
+                $('tbody').append(li);
+            }
+        })
+    </script>
+</body>
+
+</html>

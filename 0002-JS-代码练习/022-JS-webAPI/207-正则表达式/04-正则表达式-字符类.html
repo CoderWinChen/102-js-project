@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(/abc/.test('abc')); //true
+        console.log(/abc/.test('ab')); //false
+
+        console.log('-------三选一---------');
+        console.log(/[abc]/.test('abc')); //true
+        console.log(/[abc]/.test('andy')); //true
+        console.log(/[abc]/.test('baby')); //true
+        console.log(/[abc]/.test('cry')); //true
+        console.log(/[abc]/.test('die')); //false
+
+
+        console.log('-------三选一---------');
+        console.log(/^[abc]$/.test('abc')); //false
+        console.log(/^[abc]$/.test('a')); // true
+        console.log(/^[abc]$/.test('b')); //true
+        console.log(/^[abc]$/.test('c')); //true
+
+
+        console.log('-------26个英文字母选一个---------');
+        console.log(/^[a-zA-Z]$/.test('D')); //true
+        console.log(/^[a-zA-Z]$/.test('d')); // true
+        console.log(/^[a-zA-Z]$/.test('DD')); //false,只能选1个
+        console.log(/^[a-zA-Z0-9]$/.test('6')); //true
+        console.log(/^[a-zA-Z0-9-_]$/.test('-')); //true
+    </script>
+</body>
+
+</html>

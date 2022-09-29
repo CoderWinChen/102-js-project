@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(Math.PI);
+        console.log(Math.random()); //生成0-1的随机数， [0,1),包括0，不包括1
+        //ceil() -> ceiling()的简写：天花板:向上取整
+        console.log(Math.ceil(1.1));  // 2 
+        console.log(Math.ceil(1.5));  // 2
+        console.log(Math.ceil(1.9));  // 2
+
+        console.log('----------');
+
+        console.log(Math.floor(1.1));  // 1
+        console.log(Math.floor(1.5));  // 1
+        console.log(Math.floor(1.9));  // 1
+
+        console.log('----------');
+
+        // 四舍五入 【就近取整，.5往大取整】
+        console.log(Math.round(1.1));
+        console.log(Math.round(1.5));
+        console.log(Math.round(1.9));
+
+        console.log('----------');
+
+        console.log(Math.round(-1.1)); //-1
+        console.log(Math.round(-1.5)); //-1
+        console.log(Math.round(-1.9)); //-2
+
+        // 最大值和最小值
+        console.log(Math.max(1,35,6,9,87)); //87
+    </script>
+</body>
+
+</html>

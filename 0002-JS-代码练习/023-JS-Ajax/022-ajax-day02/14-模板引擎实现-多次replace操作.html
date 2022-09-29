@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let div = '<div>我是{{name}}，今年{{ age }}岁了,性别:{{gender}}，爱好:{{  hobby  }}</div>';
+        let reg = /{{\s*([a-zA-Z]+)\s*}}/;
+        let r1 = replaceAll(div,reg);
+        let r2 = replaceAll(r1,reg);
+        let r3 = replaceAll(r2,reg);
+        let r4 = replaceAll(r3,reg);
+        console.log(r4);
+
+        // 多次字符串替换操作，封装为方法
+        function replaceAll(str,reg){
+            let result = reg.exec(str); //拿到匹配的字符
+            str = str.replace(result[0], result[1]) //进行替换
+            return str;
+        }
+    </script>
+</body>
+</html>

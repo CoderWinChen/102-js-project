@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 给一个数字数组，该数组中有很多数字0，将不为0的数据存入到一个新的数组中
+        let array = [10, 20, 30, 55, 0, 6, 0, 9, 0, 78, 30]
+        let newArray = []
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] !== 0) {
+                newArray.push(array[i])
+            }
+        }
+        console.log(newArray);
+    </script>
+</body>
+
+</html>

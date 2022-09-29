@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+ 
+    <script>
+        let balance = prompt('请输入您的银行卡余额:');
+        let water = prompt('请输入水费:');
+        let election = prompt('请输入电费');
+        let internetFare = prompt('请输入电费');
+        let current = balance - water - election - internetFare;
+        document.write(`
+           <table>
+        <caption><h3>2020年12月消费支出</h3></caption>
+        <tr>
+            <th>银行卡余额</th>
+            <th>水费</th>
+            <th>电费</th>
+            <th>网费</th>
+            <th>银行卡余额</th>
+        </tr>
+        <tr>
+            <td>${balance}元</td>
+            <td>${water}元</td>
+            <td>${election}元</td>
+            <td>${internetFare}元</td>
+            <td>${current}元</td>
+        </tr>
+    </table>
+        `)
+    </script>
+</body>
+</html>
